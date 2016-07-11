@@ -7,7 +7,7 @@ import Types exposing (..)
 
 decodeNewsItem : Decoder News
 decodeNewsItem =
-    object1 News
+    object1 News -- Json object with one property, the "object1" is for mapping the resulting string to a News (without "object1 News", we'd just get the string back)
         ("title" := Json.Decode.string ) -- ':=' is a function from the Json.Decode that grabs a field with a given type
 
 decodeNews : Decoder (List News)
