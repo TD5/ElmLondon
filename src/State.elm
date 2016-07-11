@@ -12,3 +12,8 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         NoOp -> ( model, Cmd.none )
+
+subscriptions : Model -> Sub Msg -- WHat should I be listening for?
+subscriptions model =
+    Sub.none
+
