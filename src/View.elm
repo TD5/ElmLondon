@@ -11,6 +11,8 @@ root model =
             [ text "News!" ]
         , ul []
             (List.map newsItem model.news)
+        , div [] 
+            [ code [] [ text (toString model) ] ] -- Dump model for debugging purposes
         ]
 
 newsItem : News -> Html Msg
