@@ -1,5 +1,5 @@
 # ElmLondon Tutorial App
-For the first session of this [meetup](http://www.meetup.com/Elm-London-Meetup/)
+For the first session of this [meetup](http://www.meetup.com/Elm-London-Meetup/), following the reference impl. https://github.com/krisajenkins/elm-from-scratch
 
 Std. lib. [here](http://package.elm-lang.org/)
 
