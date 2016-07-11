@@ -21,8 +21,8 @@ update msg model =
             , Cmd.none
             )
 
-        GetNewsResponse (Ok newNews) ->
-            ( { model | error = Nothing, news = newNews}
+        GetNewsResponse (Ok freshNews) ->
+            ( { model | error = Nothing, news = freshNews }
             , Cmd.none
             )
 
