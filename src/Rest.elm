@@ -21,5 +21,5 @@ endPoint =
 getNews : Cmd Msg
 getNews =
     Http.get decodeNews endPoint
-    |> Task.perform Result.Err Result.Ok
+    |> Task.perform Failed Succeeded
     |> Cmd.map GetNewsResponse

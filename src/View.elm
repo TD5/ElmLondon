@@ -9,8 +9,18 @@ root model =
     div []
         [ h1 [style [ ( "font-style", "italic" ) ] ]
             [ text "News!" ]
-        , ul []
-            (List.map newsItem model.news)
+        , case model.news of
+
+            Succeeded news ->
+                ul []
+                    (List.map newsItem news)
+
+            Loading -> 
+                text "Loading..."
+
+            Failed error ->
+                text (toString error)
+
         , div [] 
             [ code [] [ text (toString model) ] ] -- Dump model for debugging purposes
         ]

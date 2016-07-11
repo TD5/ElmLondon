@@ -6,8 +6,7 @@ import Rest exposing (..)
 
 init : ( Model, Cmd Msg ) -- "Cmd" means this is a way of describing side-effects
 init = 
-    ( { news = []
-      , error = Nothing 
+    ( { news = Loading
       }
     , getNews -- From imported Rest
     )
@@ -16,16 +15,10 @@ init =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        GetNewsResponse (Err errorMessage) ->
-            ( { model | error = Just errorMessage }
+        GetNewsResponse response ->
+            ( { model | news = response }
             , Cmd.none
             )
-
-        GetNewsResponse (Ok freshNews) ->
-            ( { model | error = Nothing, news = freshNews }
-            , Cmd.none
-            )
-
 
 subscriptions : Model -> Sub Msg -- What should I be listening for?
 subscriptions model =
